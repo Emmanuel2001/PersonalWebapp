@@ -1,0 +1,43 @@
+﻿@page
+@model EbiMimi.Pages.test.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Photo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo.PublicSchedule)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo.PublicSchedule)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo.photo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo.photo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo.UploadDT)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo.UploadDT)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Photo.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

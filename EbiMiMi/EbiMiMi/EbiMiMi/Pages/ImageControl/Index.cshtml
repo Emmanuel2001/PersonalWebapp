@@ -1,0 +1,46 @@
+﻿@page
+@model EbiMiMi.Pages.ImageControl.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Delete Photo</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Gallery[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gallery[0].URL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gallery[0].Caption)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Gallery) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @item.URL.Substring(53)
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caption)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

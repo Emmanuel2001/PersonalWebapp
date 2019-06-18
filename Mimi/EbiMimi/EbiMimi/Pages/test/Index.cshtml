@@ -1,0 +1,54 @@
+﻿@page
+@model EbiMimi.Pages.test.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo[0].PublicSchedule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo[0].photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo[0].UploadDT)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Photo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicSchedule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UploadDT)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

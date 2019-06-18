@@ -1,0 +1,228 @@
+﻿.gallery {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    border: solid #fff;
+    border-width: 6px 6px 20px 6px;
+    box-shadow: 1px 1px 5px #333; /* Standard blur at 5px. Increase for more depth */
+    -webkit-box-shadow: 1px 1px 5px #333;
+    -moz-box-shadow: 1px 1px 5px #333;
+    height:auto; 
+    width: auto;
+    margin-bottom: 4px;
+}
+
+.gallery a img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery a video {
+    width: 100%;
+    height: auto;
+}
+
+.des {
+    padding-top:15px;
+    text-align: center;
+    background-color: white;
+}
+
+.responsive{
+    padding: 0 6px;
+    float: left;
+    width: 25%;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 25%;
+        margin: 6px 0;
+        padding: 0 15px 0 15px;
+    }
+    .parallax {
+        /* The image used */
+        background-image: url('../images/file-1.jpeg');
+        /* Set a specific height */
+        height: 300px;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        color: white;
+    }
+    .container{
+        padding-left :0;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+        padding: 0 15px 0 15px;
+    }
+
+    .homeimage {
+        max-width: 100%;
+        min-width: 300px;
+        height: auto;
+    }
+    .parallax {
+        /* The image used */
+        background-image: url('../images/file-1.jpeg');
+        /* Set a specific height */
+        height: 300px;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        color: white;
+    }
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.orderly {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body {
+    background-image: url('../images/backgroundbts.jpeg');
+}
+
+.titledesign {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+h1 {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.countup {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.countup .timeel {
+    display: inline-block;
+    padding: 10px;
+    background: #151515;
+    margin: 0;
+    color: white;
+    min-width: 2.6rem;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.countup span[class*="timeRef"] {
+    margin-left: 0;
+    background-color: lightpink;
+    color: black;
+    margin-top: 10px;
+}
+
+
+
+
+.homeimage {
+    height: 100%;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.boxing {
+    font-family: 'Love Ya Like A Sister', cursive;
+    margin: 50px auto 50px auto;
+    text-align: center;
+    font-size:1.5em;
+}
+
+.clocktime{
+    margin: 100px auto 100px auto;
+}
+
+
+input[type="file"]::-webkit-file-upload-button {
+    color: #494949 !important;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.about{
+    border: 3px solid pink;
+    border-radius: 10px;
+    background-color: azure;
+}
+
+.about p{
+    padding: 5px;
+}
+
+.clocktime h4 {
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.btn {
+    position: relative;
+    display: block;
+    color: black;
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+    text-decoration: none;
+    margin: 30px 0;
+    border: 2px solid #f4dcdc;
+    padding: 14px 80px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 1s all ease;
+    text-align: center;
+}
+
+.btn::before {
+    background: #d3c2c2;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+
+.btn3::before {
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.btn3:hover::before {
+    height: 380%;
+}

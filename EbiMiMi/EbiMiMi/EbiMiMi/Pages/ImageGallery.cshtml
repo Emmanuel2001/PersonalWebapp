@@ -1,0 +1,70 @@
+﻿@page
+@model EbiMiMi.Pages.ImageGalleryModel
+@{
+    ViewData["Title"] = "Image Gallery";
+}
+
+<h1 class="titledesign">Our Photos 💚</h1>
+<div class="row">
+    <div class="col-md-12">
+        @*COMMENT: This is where we can check when the page loads if there is any data in ViewData["SuccessMessage"]
+            If there is, show the message in bootstraps alert box*@
+        @if (ViewData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>@ViewData["SuccessMessage"]</strong>
+            </div>
+        }
+    </div>
+</div>
+<div class="orderly">
+    @*COMMENT: Here we loop through the models GalleryImages we got back from the database.
+        If the count is > 0 show a thumbnail of the image and the caption that belongs to it.
+        If there arent any images, display a simple message stating so.*@
+    @if (Model.GalleryImages.Count > 0)
+    {
+        var c = 1;
+        for (int i=0; i < Model.GalleryImages.Count; i++)
+        {
+
+            var k = Model.GalleryImages.Count;
+            <div class="responsive">
+                <div class="gallery">
+                    @if (Model.GalleryImages[k - c].URL.Substring(Model.GalleryImages[k - c].URL.Length - 4) != ".mp4")
+                    {
+                        <a href="@Model.GalleryImages[k - c].URL">
+                            <img src="@Model.GalleryImages[k - c].URL" alt="...">
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Model.GalleryImages[k - c].URL">
+                            <video loop src="@Model.GalleryImages[k - c].URL" alt="..." autoplay>
+                        </a>
+                    }
+                    <div class="des">
+                        @*COMMENT: For the caption, we check if !null
+            Display the caption if there is one, otherwise display a message stating so*@
+                        @if (Model.GalleryImages[k - c].Caption != null)
+                        {
+                            <p>@Model.GalleryImages[k - c].Caption</p>
+                        }
+                        else
+                        {
+                            <p>Love</p>
+                        }
+                    </div>
+                </div>
+            </div>
+            c++;
+        }
+    }
+    else
+    {
+        <h1>No Images to display!</h1>
+    }
+</div>
+
